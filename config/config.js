@@ -5,7 +5,7 @@ const crypto = require('crypto');
 /**
  * Crypto
  */
-exports.do_cipher = (inputpass) => {
+exports.doCipher = (inputpass) => {
   const salt = "SALT STRING";
   const iterations = 100;
   const keylen = 24;
