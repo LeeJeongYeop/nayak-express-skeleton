@@ -1,0 +1,8 @@
+{
+  "host" : "HOST IP",
+  "port" : 3306,
+  "user" : "USER",
+  "password" : "PASSWORD",
+  "database" : "DB NAME",
+  "connectionLimit" : 100
+}

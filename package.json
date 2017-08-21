@@ -3,7 +3,9 @@
   "version": "1.0.0",
   "description": "prod by nayak",
   "main": "index.js",
-  "scripts": {},
+  "scripts": {
+    "start": "node app.js"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/LeeJeongYeop/nayak-express-skeleton.git"
