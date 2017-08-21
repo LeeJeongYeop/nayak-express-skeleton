@@ -13,49 +13,11 @@
   },
 
 
-  "1401": {
-    "status": 400,
-    "code": 0,
-    "message": "아이디가 중복됩니다.",
-    "description": "Exist Email"
-  },
-  "1402": {
-    "status": 400,
-    "code": 0,
-    "message": "아이디가 존재하지 않습니다.",
-    "description": "Not SignIn VocaVocaNi"
-  },
-  "1403": {
-    "status": 403,
-    "code": 0,
-    "message": "비밀번호가 틀렸습니다.",
-    "description": "Passwords no not match"
-  },
-  "1404": {
-    "status": 400,
-    "code": 0,
-    "message": "비밀번호가 일치하지 않습니다",
-    "description": "Passwords no not match"
-  },
-  "1405": {
-    "status": 400,
-    "code": 0,
-    "message": "이미 승인 절차가 진행된 유저입니다.",
-    "description": "Already confirm user"
-  },
-
-
   "9401": {
     "status": 400,
     "code": 0,
     "message": "파라미터가 잘못되었습니다.",
     "description": "invalid parameter"
-  },
-  "9402": {
-    "status": 403,
-    "code": 0,
-    "message": "권한이 없습니다.",
-    "description": "Do not have permission"
   },
   "10401": {
     "status": 401,
