@@ -10,7 +10,7 @@ module.exports = (app) => {
     SERVER_ERROR: 500
   };
 
-  app.use((err, req, res) => {
+  app.use((err, req, res, next) => {
     // Error Log
     log.error(`\n\x1b[31m[ERROR Handler] \u001b[0m \n\x1b[34m[Request PATH - ${req.path}] \u001b[0m \n`, err);
 
@@ -26,8 +26,6 @@ module.exports = (app) => {
     const response_error = errors[err];
     response_error.miss_param = miss_param ? miss_param : undefined;
 
-    return res.status(response_error.status).json([
-      response_error
-    ]);
+    return res.status(response_error.status).json(response_error);
   });
 };
