@@ -23,7 +23,29 @@ $ npm start
 
 ```
 nayak-express-skeleton
-??? config
+nayak-express-skeleton
+├─┬ config
+│ ├── config.js
+│ ├── DBConfig.json
+│ ├── logger.js
+│ └── ParamValidation.js
+├─┬ controllers
+│ ├── AuthCtrl.js
+│ └── index.js
+├─┬ models
+│ ├── AuthModel.js
+│ └── TransactionWrapper.js
+├─┬ routes
+│ ├── index.js
+│ └── ServiceRouter.js
+├── app.js
+├── ErrorHandler.js
+├── errors.json
+├── LICENSE
+├── package.json
+├── package-lock.json
+├── README.md
+└── server.js config
 ? ??? config.js
 ? ??? DBConfig.json
 ? ??? logger.js
