@@ -50,6 +50,8 @@ exports.write = async (req, res, next) => {
       contents: req.body.contents
     };
 
+    console.log(board_data);
+
     result = await boardModel.write(board_data);
   } catch (error) {
     return next(error);

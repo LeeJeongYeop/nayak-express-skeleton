@@ -37,7 +37,7 @@ exports.read = (board_id) => {
       `
       SELECT *
       FROM board
-      WHERE board_id = ?
+      WHERE id = ?
       `;
 
     pool.query(sql, [board_id], (err, rows) => {
@@ -80,10 +80,10 @@ exports.write = (board_data) => {
         `
         SELECT *
         FROM board
-        WHERE board_id = ?
+        WHERE id = ?
         `;
 
-      pool.query(sql, result.insertId, (err, rows) => {
+      pool.query(sql, [result.insertId], (err, rows) => {
         if (err) {
           reject(err);
         } else {
@@ -130,7 +130,7 @@ exports.commentWrite = (comment_data) => {
           const sql =
             `
             UPDATE board SET comment_count = comment_count + 1
-            WHERE board_id = ?
+            WHERE id = ?
             `;
 
           context.conn.query(sql, [comment_data.board_id], (err, rows) => {
@@ -154,7 +154,7 @@ exports.commentWrite = (comment_data) => {
             `
             SELECT *
             FROM comment
-            WHERE comment_id = ?
+            WHERE id = ?
             `;
 
           context.conn.query(sql, [context.result.insertId], (err, rows) => {
