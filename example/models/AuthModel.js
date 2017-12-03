@@ -22,10 +22,12 @@ exports.auth = (token, done) => {
     } else {
       const sql =
         `
-        Authenticate SQL Query
+        SELECT id, user_id
+        FROM user
+        WHERE user_id = ?
         `;
 
-      pool.query(sql, [decoded.id], (err, rows) => {
+      pool.query(sql, [decoded.user_id], (err, rows) => {
         if (err) {
           return done(err);
         } else {
@@ -33,7 +35,7 @@ exports.auth = (token, done) => {
             return done(401);
           } else {
             // Authenticate
-            return done(null, rows[0].user);  // example
+            return done(null, rows[0]);
           }
         }
       })

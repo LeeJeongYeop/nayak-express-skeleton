@@ -2,6 +2,24 @@ const Joi = require('joi');
 
 module.exports = {
   /**
+   * User Validation
+   */
+  // POST - /user/sign-up
+  user_sign_up: {
+    body: {
+      user_id: Joi.string().required(),
+      password: Joi.string().required()
+    }
+  },
+  // POST - /user/sign-in
+  user_sign_in: {
+    body: {
+      user_id: Joi.string().required(),
+      password: Joi.string().required()
+    }
+  },
+
+  /**
    * Board Validation
    */
   // POST - /board
