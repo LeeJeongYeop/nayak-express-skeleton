@@ -1,0 +1,42 @@
+{
+  "400": {
+    "status": 400,
+    "code": 0,
+    "message": "잘못된 요청입니다.",
+    "description": "Bad Request"
+  },
+  "401": {
+    "status": 401,
+    "code": 0,
+    "message": "로그인에 실패하였습니다.",
+    "description": "Login Fail"
+  },
+
+
+  "9401": {
+    "status": 400,
+    "code": 0,
+    "message": "파라미터가 잘못되었습니다.",
+    "description": "invalid parameter"
+  },
+  "10401": {
+    "status": 401,
+    "code": 0,
+    "message": "만료된 인증 토큰 입니다.",
+    "description": "expired token"
+  },
+  "10403": {
+    "status": 403,
+    "code": 0,
+    "message": "잘못된 인증 방식입니다.",
+    "description": "invalid authentication"
+  },
+
+
+  "500": {
+    "status": 500,
+    "code": 0,
+    "message": "서버 오류",
+    "description": "Internal Server Error"
+  }
+}
