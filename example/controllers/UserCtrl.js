@@ -38,7 +38,7 @@ exports.signIn = async (req, res, next) => {
       password: config.doCipher(req.body.password)
     };
 
-    result.user_info = await userModel.signIp(user_data);
+    result.user_info = await userModel.signIn(user_data);
     result.token = jwt.sign(result.user_info, config.jwt.cert, {expiresIn: '10h'});
 
   } catch (error) {

@@ -20,6 +20,9 @@ app.use(express.static(path.join(__dirname, 'public')));
 // CORS ALL ACCESS Settings
 app.use(cors());
 
+// create DB pool
+require('./config/config').createDBPool(100);
+
 // initialize routes
 require('./routes')(app);
 

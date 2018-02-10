@@ -1,6 +1,23 @@
 'use strict';
 
 const crypto = require('crypto');
+const mysql = require('mysql');
+let pool;
+
+/**
+ * DB Connections Info
+ */
+exports.pool;
+exports.createDBPool = (connectionLimit) => {
+  this.pool = mysql.createPool({
+    "host": "localhost",
+    "port": 3306,
+    "user": "root",
+    "password": "",
+    "database": "board",
+    "connectionLimit": connectionLimit
+  });
+};
 
 /**
  * Crypto
@@ -18,6 +35,6 @@ exports.doCipher = (inputpass) => {
 /**
  * jwt
  */
-exports.jwt =  {
+exports.jwt = {
   cert: "kingNayakJWT"
 };

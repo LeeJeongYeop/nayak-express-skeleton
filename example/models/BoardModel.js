@@ -1,8 +1,6 @@
 'use strict';
 
-const mysql = require('mysql');
-const DBConfig = require('./../config/DBConfig');
-const pool = mysql.createPool(DBConfig);
+const pool = require('../config/config').pool;
 const transactionWrapper = require('./TransactionWrapper');
 
 
