@@ -1,8 +1,6 @@
 'use strict';
 
-const mysql = require('mysql');
-const DBConfig = require('./../config/DBConfig');
-const pool = mysql.createPool(DBConfig);
+const pool = require('../config/config').pool;
 
 /**
  * Sign Up
@@ -52,7 +50,7 @@ exports.signUp = (user_data) => {
  * Sign In
  * @param: user_data = { user_id, password }
  */
-exports.signIp = (user_data) => {
+exports.signIn = (user_data) => {
   return new Promise((resolve, reject) => {
     const sql =
       `
