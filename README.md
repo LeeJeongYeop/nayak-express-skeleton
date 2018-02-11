@@ -25,7 +25,6 @@ $ npm start
 nayak-express-skeleton
 ├─┬ config
 │ ├── config.js
-│ ├── DBConfig.json
 │ ├── logger.js
 │ └── ParamValidation.js
 ├─┬ controllers
@@ -48,8 +47,7 @@ nayak-express-skeleton
 ```
 
 - **config**: The configuration file management directory required for the project.
-   - **config.js**: [Must be gitignore] Fill in the settings required. (example. Crypto, JWT )
-   - **DBconfig.json**: [Must be gitignore] MySQL, MariaDB information.
+   - **config.js**: [Must be gitignore] Fill in the settings required. (example. DB connection information, Crypto, JWT)
    - **logger.js**: Logging config file. (used [Winston](https://www.npmjs.com/package/winston))
    - **ParamValidation.js**: Validates the request parameters. (used [express-validation](https://www.npmjs.com/package/express-validation))
 - **models**: Write a query and associate it with the database.
