@@ -11,21 +11,20 @@ module.exports = (app) => {
   };
 
   app.use((err, req, res, next) => {
-    // Error Log
-    log.error(`\n\x1b[31m[ERROR Handler] \u001b[0m \n\x1b[34m[Request PATH - ${req.path}] \u001b[0m \n`, err);
+    // Custom error logging title.
+    const log_title = `\n\x1b[31m[ERROR Handler]\u001b[0m\n\x1b[34m[Request PATH - ${req.path}]\u001b[0m\n`;
 
-    let miss_param = false;
+    // Custom error division.
+    let response = errors[isNaN(err) ? error_code.SERVER_ERROR : err];
     if (err instanceof expressValidation.ValidationError) {  // Wrong Parameter
-      miss_param = err.errors.map(error => error.messages.join('. ')).join('\n');
-      log.error(`\n\x1b[36m[Miss Params] \u001b[0m \n${miss_param}`);
-      err = error_code.INVALID_PARAMETER;
-    } else if (isNaN(err)) {  // Server Error
-      err = error_code.SERVER_ERROR;
+      response = errors[error_code.INVALID_PARAMETER];
+      response.miss_param = err.errors.map(error => error.messages.join('. ')).join('\n');
     }
 
-    const response_error = errors[err];
-    response_error.miss_param = miss_param ? miss_param : undefined;
+    // Custom error logging.
+    log.error(log_title.concat(typeof response.miss_param !== 'undefined' ?
+      `\x1b[36m[Miss Params] \u001b[0m \n${response.miss_param}` : err));
 
-    return res.status(response_error.status).json(response_error);
+    return res.status(response.status).json(response);
   });
 };
